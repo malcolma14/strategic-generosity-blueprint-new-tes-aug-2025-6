@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 14px;
+  
+  /* IG Brand Colors */
+  --ig-blue: #0072CE;
+  --ig-blue-dark: #001E60;
+  --ig-blue-light: #D9EBF6;
+  --ig-blue-lighter: #F0F8FD;
+  --ig-black: #000000;
+  --ig-grey: #767676;
+  --ig-black-grey: #2D2D2F;
+  --ig-light-grey: #DFE3EB;
+  
+  --background: #ffffff;
+  --foreground: var(--ig-black-grey);
+  --card: #ffffff;
+  --card-foreground: var(--ig-black-grey);
+  --popover: #ffffff;
+  --popover-foreground: var(--ig-black-grey);
+  --primary: var(--ig-blue);
+  --primary-foreground: #ffffff;
+  --secondary: var(--ig-blue-lighter);
+  --secondary-foreground: var(--ig-blue-dark);
+  --muted: var(--ig-light-grey);
+  --muted-foreground: var(--ig-grey);
+  --accent: var(--ig-blue-light);
+  --accent-foreground: var(--ig-blue-dark);
+  --destructive: #d4183d;
+  --destructive-foreground: #ffffff;
+  --border: rgba(223, 227, 235, 0.8);
+  --input: transparent;
+  --input-background: var(--ig-blue-lighter);
+  --switch-background: var(--ig-light-grey);
+  --font-weight-medium: 600;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --ring: var(--ig-blue);
+  --chart-1: var(--ig-blue);
+  --chart-2: #8DD0EF;
+  --chart-3: var(--ig-blue-dark);
+  --chart-4: #B8E0F5;
+  --chart-5: #5AAFE3;
+  --radius: 0.5rem;
+  --sidebar: var(--ig-blue-lighter);
+  --sidebar-foreground: var(--ig-black-grey);
+  --sidebar-primary: var(--ig-blue);
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: var(--ig-blue-light);
+  --sidebar-accent-foreground: var(--ig-blue-dark);
+  --sidebar-border: var(--ig-light-grey);
+  --sidebar-ring: var(--ig-blue);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/**
+ * Base typography following IG brand guidelines
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-semibold);
+      line-height: 1.3;
+      color: var(--ig-blue-dark);
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-semibold);
+      line-height: 1.4;
+      color: var(--ig-blue-dark);
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-semibold);
+      line-height: 1.4;
+      color: var(--ig-blue-dark);
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-semibold);
+      line-height: 1.5;
+      color: var(--ig-blue-dark);
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.6;
+      color: var(--ig-black-grey);
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* IG Brand specific utilities */
+.ig-gradient {
+  background: linear-gradient(135deg, var(--ig-blue-dark) 0%, var(--ig-blue) 100%);
+}
+
+.ig-text-gradient {
+  background: linear-gradient(135deg, var(--ig-blue-dark) 0%, var(--ig-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ig-shield {
+  width: 24px;
+  height: 24px;
+  background: var(--ig-blue);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
